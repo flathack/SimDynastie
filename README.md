@@ -38,13 +38,19 @@ Aktuell ist SimDynastie auf die Nachbarschaft `N004` ausgelegt.
 
 ### Windows-App
 
-Für normale Windows-Nutzer ist eine lokale Windows-App vorgesehen. Sie startet
+Für normale Windows-Nutzer gibt es eine lokale Windows-App. Sie startet
 SimDynastie auf deinem Rechner und öffnet die Oberfläche automatisch im Browser.
 Die Daten werden lokal unter deinem Windows-Benutzerprofil gespeichert.
 
-Sobald ein Windows-Paket veröffentlicht ist, findest du es hier:
+[SimDynastie 0.1.0 für Windows herunterladen](https://github.com/flathack/SimDynastie/releases/download/v0.1.0/SimDynastie-0.1.0-windows-x64.zip)
 
-[Releases öffnen](https://github.com/flathack/SimDynastie/releases)
+Nach dem Download entpackst du die ZIP-Datei und startest `SimDynastie.exe`.
+
+SHA256:
+
+```text
+D8FBA98E5784136B82E2A44AC5A5B377C06F13EBBEA272CA1DE3758FB70C5D61
+```
 
 ### Docker oder NAS
 
@@ -133,3 +139,8 @@ ghcr.io/flathack/simdynastie:0.1.0
 ghcr.io/flathack/simdynastie:latest
 ```
 
+Windows:
+
+```text
+https://github.com/flathack/SimDynastie/releases/download/v0.1.0/SimDynastie-0.1.0-windows-x64.zip
+```

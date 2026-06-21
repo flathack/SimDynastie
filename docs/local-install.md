@@ -9,14 +9,23 @@ Die bequemste Variante für normale Windows-Nutzer ist die lokale Windows-App.
 Sie startet SimDynastie auf deinem Rechner und öffnet die Oberfläche automatisch
 im Browser.
 
-Sobald ein Windows-Paket veröffentlicht ist, findest du es unter:
+[SimDynastie 0.1.0 für Windows herunterladen](https://github.com/flathack/SimDynastie/releases/download/v0.1.0/SimDynastie-0.1.0-windows-x64.zip)
+
+Nach dem Download:
+
+1. ZIP-Datei entpacken.
+2. `SimDynastie.exe` starten.
+3. Warten, bis sich der Browser öffnet.
+4. In der App dein Savegame-Backup importieren.
+
+SHA256:
 
 ```text
-https://github.com/flathack/SimDynastie/releases
+D8FBA98E5784136B82E2A44AC5A5B377C06F13EBBEA272CA1DE3758FB70C5D61
 ```
 
-Nach dem Start kannst du in der App dein Savegame-Backup importieren und direkt
-mit dem Stammbaum arbeiten.
+Falls Windows beim ersten Start warnt, prüfe, ob du die Datei aus dem offiziellen
+Release heruntergeladen hast.
 
 ## Docker
 
