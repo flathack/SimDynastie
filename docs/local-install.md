@@ -9,7 +9,7 @@ Die bequemste Variante für normale Windows-Nutzer ist die lokale Windows-App.
 Sie startet SimDynastie auf deinem Rechner und öffnet die Oberfläche automatisch
 im Browser.
 
-[SimDynastie 0.1.0 für Windows herunterladen](https://github.com/flathack/SimDynastie/releases/download/v0.1.0/SimDynastie-0.1.0-windows-x64.zip)
+[SimDynastie 0.2.0 für Windows herunterladen](https://github.com/flathack/SimDynastie/releases/download/v0.2.0/SimDynastie-0.2.0-windows-x64.zip)
 
 Nach dem Download:
 
@@ -21,7 +21,7 @@ Nach dem Download:
 SHA256:
 
 ```text
-D8FBA98E5784136B82E2A44AC5A5B377C06F13EBBEA272CA1DE3758FB70C5D61
+E41D404E7F1D6DA2A3F9133D8A1D935680B8B8F09AAC23B8FAABFEAC92F08824
 ```
 
 Falls Windows beim ersten Start warnt, prüfe, ob du die Datei aus dem offiziellen

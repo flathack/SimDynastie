@@ -5,7 +5,7 @@ SimDynastie wird als fertiges Docker-Image über GitHub Container Registry verö
 ## Image
 
 ```text
-ghcr.io/flathack/simdynastie:0.1.0
+ghcr.io/flathack/simdynastie:0.2.0
 ghcr.io/flathack/simdynastie:latest
 ```
 

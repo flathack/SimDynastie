@@ -42,14 +42,14 @@ Für normale Windows-Nutzer gibt es eine lokale Windows-App. Sie startet
 SimDynastie auf deinem Rechner und öffnet die Oberfläche automatisch im Browser.
 Die Daten werden lokal unter deinem Windows-Benutzerprofil gespeichert.
 
-[SimDynastie 0.1.0 für Windows herunterladen](https://github.com/flathack/SimDynastie/releases/download/v0.1.0/SimDynastie-0.1.0-windows-x64.zip)
+[SimDynastie 0.2.0 für Windows herunterladen](https://github.com/flathack/SimDynastie/releases/download/v0.2.0/SimDynastie-0.2.0-windows-x64.zip)
 
 Nach dem Download entpackst du die ZIP-Datei und startest `SimDynastie.exe`.
 
 SHA256:
 
 ```text
-D8FBA98E5784136B82E2A44AC5A5B377C06F13EBBEA272CA1DE3758FB70C5D61
+E41D404E7F1D6DA2A3F9133D8A1D935680B8B8F09AAC23B8FAABFEAC92F08824
 ```
 
 ### Docker oder NAS
@@ -58,7 +58,7 @@ Wenn du SimDynastie auf einem NAS, in Portainer oder mit Docker betreiben
 möchtest, kannst du das fertige Docker-Image verwenden:
 
 ```text
-ghcr.io/flathack/simdynastie:0.1.0
+ghcr.io/flathack/simdynastie:0.2.0
 ```
 
 Mit Docker:
@@ -72,7 +72,7 @@ docker run -d \
   -e SIMDYNASTIE_SAVEGAME_ROOTS=/backups \
   -v simdynastie-data:/data \
   -v /pfad/zu/deinen/sims2-backups:/backups/SIMS2:ro \
-  ghcr.io/flathack/simdynastie:0.1.0
+  ghcr.io/flathack/simdynastie:0.2.0
 ```
 
 Danach öffnest du:
@@ -98,6 +98,14 @@ Weitere Hinweise findest du in der [Deployment-Anleitung](docs/deployment.md).
 
 Nach dem Import kannst du den Stammbaum ansehen, Sims im Explorer durchsuchen
 und geplante Hochzeiten in der Heiratsdatenbank verwalten.
+
+## Neu in v0.2.0
+
+- übersichtlichere Statistikseite mit Familien-, Qualitäts- und Profildaten
+- Namensdatenbank als Bibliotheksansicht mit mehreren Listen
+- verbesserte Heiratsdatenbank mit genauerer biologischer Verwandtschaftsprüfung
+- Cousins und Cousinen zweiten und dritten Grades werden für die Heiratsplanung erlaubt
+- bessere mobile Bedienung und Touch-Navigation für große Stammbäume
 
 ## Wichtige Hinweise
 
@@ -130,17 +138,17 @@ und ohne Gewähr.
 
 ## Version
 
-Aktuelle öffentliche Version: `v0.1.0`
+Aktuelle öffentliche Version: `v0.2.0`
 
 Docker-Images:
 
 ```text
-ghcr.io/flathack/simdynastie:0.1.0
+ghcr.io/flathack/simdynastie:0.2.0
 ghcr.io/flathack/simdynastie:latest
 ```
 
 Windows:
 
 ```text
-https://github.com/flathack/SimDynastie/releases/download/v0.1.0/SimDynastie-0.1.0-windows-x64.zip
+https://github.com/flathack/SimDynastie/releases/download/v0.2.0/SimDynastie-0.2.0-windows-x64.zip
 ```
