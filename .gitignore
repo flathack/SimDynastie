@@ -1,0 +1,7 @@
+.env
+*.sqlite
+*.sqlite3
+backups/
+savegames/
+data/
+*.tar.gz

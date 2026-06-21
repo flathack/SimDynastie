@@ -1,0 +1,16 @@
+services:
+  simdynastie:
+    image: ghcr.io/flathack/simdynastie:0.1.0
+    container_name: simdynastie
+    restart: unless-stopped
+    ports:
+      - "${SIMDYNASTIE_PORT:-7777}:8000"
+    environment:
+      SIMDYNASTIE_DB: /data/simdynastie.sqlite3
+      SIMDYNASTIE_SAVEGAME_ROOTS: /backups
+    volumes:
+      - simdynastie-data:/data
+      - ${SIMS2_BACKUP_PATH:-./backups}:/backups/SIMS2:ro
+
+volumes:
+  simdynastie-data:
