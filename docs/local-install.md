@@ -1,32 +1,41 @@
 # Lokale Installation
 
-## Heute verfügbar: Docker
+SimDynastie ist für lokale Nutzung gedacht. Deine Daten bleiben auf deinem
+Rechner, deinem NAS oder in deinem Docker-Volume.
 
-Die stabile lokale Variante ist Docker. Sie läuft auf NAS, Windows mit Docker Desktop, Linux und macOS.
+## Windows-App
+
+Die bequemste Variante für normale Windows-Nutzer ist die lokale Windows-App.
+Sie startet SimDynastie auf deinem Rechner und öffnet die Oberfläche automatisch
+im Browser.
+
+Sobald ein Windows-Paket veröffentlicht ist, findest du es unter:
+
+```text
+https://github.com/flathack/SimDynastie/releases
+```
+
+Nach dem Start kannst du in der App dein Savegame-Backup importieren und direkt
+mit dem Stammbaum arbeiten.
+
+## Docker
+
+Docker eignet sich für NAS, Portainer, Homeserver oder Nutzer, die SimDynastie
+dauerhaft im lokalen Netzwerk laufen lassen möchten.
 
 ```bash
 docker compose -f docker-compose.ghcr.yml up -d
 ```
 
-Danach:
+Danach öffnest du:
 
 ```text
 http://localhost:7777
 ```
 
-## Möglich: native Desktop-App
+## Welche Variante soll ich nehmen?
 
-Eine lokal installierbare Desktop-App ist technisch möglich. Sinnvoll wäre ein kleines Windows-Installationspaket, das:
+- **Windows-App**: empfohlen, wenn du SimDynastie nur auf deinem PC nutzen willst.
+- **Docker/NAS**: empfohlen, wenn SimDynastie dauerhaft im Heimnetz laufen soll.
 
-- SimDynastie lokal startet
-- ein eigenes App-Fenster öffnet
-- die Daten lokal speichert
-- optional den Backup-Ordner auswählbar macht
-
-Mögliche technische Wege:
-
-- **Tauri oder Wails**: kleines Desktop-Fenster mit lokalem Backend
-- **PyInstaller plus WebView**: Python-App mit eingebettetem lokalen Server
-- **Docker-freier Windows-Service**: eher für NAS-ähnliche Dauerinstallationen
-
-Für öffentliche Nutzer ist Tauri oder Wails langfristig am angenehmsten. Dafür muss im privaten Entwicklungsrepo ein eigener Desktop-Wrapper gebaut werden. Dieses öffentliche GitHub-Repo bleibt weiterhin nur die Produkt- und Release-Seite.
+In beiden Varianten bleiben deine Daten lokal.
