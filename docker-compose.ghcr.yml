@@ -2,7 +2,7 @@ services:
   simdynastie:
     # Public image built from the private source repository.
     # Tag pin is recommended for production. :latest is fine for quick trials.
-    image: ghcr.io/flathack/simdynastie:0.4.1
+    image: ghcr.io/flathack/simdynastie:0.4.2
     container_name: simdynastie
     restart: unless-stopped
     ports:
