@@ -1,15 +1,22 @@
 services:
   simdynastie:
-    image: ghcr.io/flathack/simdynastie:0.2.0
+    # Public image built from the private source repository.
+    # Tag pin is recommended for production. :latest is fine for quick trials.
+    image: ghcr.io/flathack/simdynastie:0.4.1
     container_name: simdynastie
     restart: unless-stopped
     ports:
+      # Default host port is 7777. Override with SIMDYNASTIE_PORT in .env.
       - "${SIMDYNASTIE_PORT:-7777}:8000"
     environment:
       SIMDYNASTIE_DB: /data/simdynastie.sqlite3
       SIMDYNASTIE_SAVEGAME_ROOTS: /backups
     volumes:
+      # Persistent SQLite database. The named volume survives container
+      # recreates, which is required to keep your imported Sims data.
       - simdynastie-data:/data
+      # Optional Sims 2 backup folder mount for .tar.gz imports.
+      # Override SIMS2_BACKUP_PATH in .env to point at your real folder.
       - ${SIMS2_BACKUP_PATH:-./backups}:/backups/SIMS2:ro
 
 volumes:
