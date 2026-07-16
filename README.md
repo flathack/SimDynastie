@@ -8,17 +8,15 @@ Der wichtigste Zweck: Du kannst zwei Sims vergleichen und sehen, ob sie
 biologisch verwandt sind. Das ist besonders praktisch, weil verwandte Sims in
 Die Sims 2 nicht heiraten können.
 
-## Für wen ist SimDynastie gedacht?
+## Aktueller Stand (öffentlich)
 
-SimDynastie richtet sich an Spielerinnen und Spieler mit großen
-Nachbarschaften, Legacy-Spielständen oder langen Familiengeschichten. Wenn dein
-Stammbaum irgendwann so groß wird, dass du nicht mehr sicher weißt, wer mit wem
-verwandt ist, ist SimDynastie genau dafür gedacht.
+- App-Version: **0.4.1**
+- Neueste Image-Referenz: `ghcr.io/flathack/simdynastie:0.4.1`
+- Auto-Updater-Manifest: [`latest.json`](latest.json)
+- Source-of-Truth: privates Gitea-Repo. Dieses Repo ist die öffentliche
+  Release-/Updater-/Deploy-Fassade, kein Code-Mirror.
 
-Die App läuft lokal. Es gibt kein Benutzerkonto, keine Cloud und keinen
-externen Datendienst.
-
-## Was kann die App?
+## Wichtigste Features
 
 - Sims aus einer Die-Sims-2-Nachbarschaft anzeigen
 - Stammbäume fokussiert um einen ausgewählten Sim darstellen
@@ -28,127 +26,36 @@ externen Datendienst.
 - tote und lebende Sims unterscheiden
 - Sim-Portraits anzeigen, sofern sie aus dem Savegame gelesen werden können
 - Details im Sim Explorer durchsuchen
-- Namen in einer Namendatenbank sammeln
-- Statistiken zur Nachbarschaft anzeigen
-- große Stammbäume per Touch, Maus und Scrollen bewegen
+- Namenslisten laden ohne sporadische 500-Fehler (v0.4.1 Fix)
 
-Aktuell ist SimDynastie auf die Nachbarschaft `N004` ausgelegt.
-
-## Installation
-
-### Windows-App
-
-Für normale Windows-Nutzer gibt es eine lokale Windows-App. Sie startet
-SimDynastie auf deinem Rechner und öffnet die Oberfläche automatisch im Browser.
-Die Daten werden lokal unter deinem Windows-Benutzerprofil gespeichert.
-
-[SimDynastie 0.2.0 für Windows herunterladen](https://github.com/flathack/SimDynastie/releases/download/v0.2.0/SimDynastie-0.2.0-windows-x64.zip)
-
-Nach dem Download entpackst du die ZIP-Datei und startest `SimDynastie.exe`.
-
-SHA256:
-
-```text
-E41D404E7F1D6DA2A3F9133D8A1D935680B8B8F09AAC23B8FAABFEAC92F08824
-```
-
-### Docker oder NAS
-
-Wenn du SimDynastie auf einem NAS, in Portainer oder mit Docker betreiben
-möchtest, kannst du das fertige Docker-Image verwenden:
-
-```text
-ghcr.io/flathack/simdynastie:0.2.0
-```
-
-Mit Docker:
+## Schnellstart (Docker)
 
 ```bash
-docker run -d \
-  --name simdynastie \
-  --restart unless-stopped \
-  -p 7777:8000 \
-  -e SIMDYNASTIE_DB=/data/simdynastie.sqlite3 \
-  -e SIMDYNASTIE_SAVEGAME_ROOTS=/backups \
-  -v simdynastie-data:/data \
-  -v /pfad/zu/deinen/sims2-backups:/backups/SIMS2:ro \
-  ghcr.io/flathack/simdynastie:0.2.0
+# Repo auschecken und Image ziehen
+git clone https://github.com/flathack/SimDynastie.git
+cd SimDynastie
+cp .env.example .env
+$EDITOR .env
+
+docker compose -f docker-compose.ghcr.yml pull
+docker compose -f docker-compose.ghcr.yml up -d
 ```
 
-Danach öffnest du:
+Danach `http://localhost:7777` im Browser öffnen.
 
-```text
-http://localhost:7777
-```
+## NAS / Dauerbetrieb
 
-Für Portainer und Docker Compose gibt es eine vorbereitete Datei:
+Für den Dauerbetrieb auf einem NAS oder Heimserver wird empfohlen, das
+neueste GHCR-Image mit einem konkreten Tag zu pinnen (statt `:latest`), damit
+versehentliche Redeploys den aktuellen Stand ziehen.
 
-[`docker-compose.ghcr.yml`](docker-compose.ghcr.yml)
+## Auto-Updater (Windows-App)
 
-Weitere Hinweise findest du in der [Deployment-Anleitung](docs/deployment.md).
+Falls du die Windows-Variante der App nutzt, ruft der Updater das Manifest
+[`latest.json`](latest.json) ab. Die dort hinterlegte `docker_image` zeigt
+auf den aktuellen Image-Stand; `windows_x64` und `release_notes` verweisen
+auf das letzte veröffentlichte Windows-Release.
 
-## Erste Schritte
+## Lizenz
 
-1. Starte SimDynastie.
-2. Öffne den Bereich **Settings**.
-3. Importiere dein Die-Sims-2-Backup oder wähle den vorbereiteten Backup-Ordner.
-4. Wechsle zum **Stammbaum**.
-5. Suche bei **Sim 1** nach einem Sim.
-6. Gib optional bei **Sim 2** einen zweiten Sim ein, um die Verwandtschaft zu prüfen.
-
-Nach dem Import kannst du den Stammbaum ansehen, Sims im Explorer durchsuchen
-und geplante Hochzeiten in der Heiratsdatenbank verwalten.
-
-## Neu in v0.2.0
-
-- übersichtlichere Statistikseite mit Familien-, Qualitäts- und Profildaten
-- Namensdatenbank als Bibliotheksansicht mit mehreren Listen
-- verbesserte Heiratsdatenbank mit genauerer biologischer Verwandtschaftsprüfung
-- Cousins und Cousinen zweiten und dritten Grades werden für die Heiratsplanung erlaubt
-- bessere mobile Bedienung und Touch-Navigation für große Stammbäume
-
-## Wichtige Hinweise
-
-- SimDynastie ist ein Anzeige- und Planungstool.
-- Die App soll deine originalen Savegames nicht direkt verändern.
-- Arbeite am besten immer mit Savegame-Backups.
-- Je nach Savegame können einzelne Daten fehlen oder nicht eindeutig lesbar sein.
-- Sehr große Stammbäume werden absichtlich fokussiert angezeigt, damit die App
-  bedienbar bleibt.
-
-## Datenschutz
-
-SimDynastie ist für lokale Nutzung gedacht.
-
-- Es gibt kein Benutzerkonto.
-- Es gibt keinen Cloud-Sync.
-- Deine importierten Savegame-Daten bleiben in deiner lokalen Installation.
-- Docker-Installationen speichern ihre Daten im konfigurierten Docker-Volume.
-- Die Windows-App speichert ihre Daten lokal in deinem Benutzerprofil.
-
-## Rechtliches
-
-SimDynastie ist ein unabhängiges Fan-Tool und steht in keiner Verbindung zu
-Electronic Arts, Maxis oder The Sims. **The Sims**, **Die Sims**, **The Sims 2**,
-EA und Maxis sind Marken ihrer jeweiligen Rechteinhaber.
-
-Nutze SimDynastie nur mit eigenen, rechtmäßig genutzten Savegames. Erstelle vor
-Importen und Änderungen immer ein Backup. Die Nutzung erfolgt auf eigenes Risiko
-und ohne Gewähr.
-
-## Version
-
-Aktuelle öffentliche Version: `v0.2.0`
-
-Docker-Images:
-
-```text
-ghcr.io/flathack/simdynastie:0.2.0
-ghcr.io/flathack/simdynastie:latest
-```
-
-Windows:
-
-```text
-https://github.com/flathack/SimDynastie/releases/download/v0.2.0/SimDynastie-0.2.0-windows-x64.zip
-```
+Privates Fan-Projekt. Keine offizielle Veröffentlichung.
