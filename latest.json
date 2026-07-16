@@ -1,9 +1,9 @@
 {
-  "version": "0.4.1",
-  "docker_image": "ghcr.io/flathack/simdynastie:0.4.1",
+  "version": "0.4.2",
+  "docker_image": "ghcr.io/flathack/simdynastie:0.4.2",
   "docker_latest": "ghcr.io/flathack/simdynastie:latest",
   "windows_x64": "https://github.com/flathack/SimDynastie/releases/download/v0.2.0/SimDynastie-0.2.0-windows-x64.zip",
   "windows_x64_sha256": "E41D404E7F1D6DA2A3F9133D8A1D935680B8B8F09AAC23B8FAABFEAC92F08824",
   "release_notes": "https://github.com/flathack/SimDynastie/releases/tag/v0.2.0",
-  "_notes": "docker_* point at v0.4.1 (newest image). windows_x64 / release_notes still point at v0.2.0 — the last published Windows release. Update after a fresh Windows build."
+  "_notes": "docker_* point at v0.4.2 (newest image). windows_x64 / release_notes still point at v0.2.0 — the last published Windows release. Update after a fresh Windows build."
 }
