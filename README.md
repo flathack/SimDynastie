@@ -10,8 +10,8 @@ Die Sims 2 nicht heiraten können.
 
 ## Aktueller Stand (öffentlich)
 
-- App-Version: **0.4.1**
-- Neueste Image-Referenz: `ghcr.io/flathack/simdynastie:0.4.1`
+- App-Version: **0.4.2**
+- Neueste Image-Referenz: `ghcr.io/flathack/simdynastie:0.4.2`
 - Auto-Updater-Manifest: [`latest.json`](latest.json)
 - Source-of-Truth: privates Gitea-Repo. Dieses Repo ist die öffentliche
   Release-/Updater-/Deploy-Fassade, kein Code-Mirror.
@@ -27,6 +27,7 @@ Die Sims 2 nicht heiraten können.
 - Sim-Portraits anzeigen, sofern sie aus dem Savegame gelesen werden können
 - Details im Sim Explorer durchsuchen
 - Namenslisten laden ohne sporadische 500-Fehler (v0.4.1 Fix)
+- Korrekte Heiratsblockierung: erste Cousins ersten Grades entfernt (`first cousins once removed`) dürfen heiraten (v0.4.2 Fix)
 
 ## Schnellstart (Docker)
 
